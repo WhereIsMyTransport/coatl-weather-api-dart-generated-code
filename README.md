@@ -1,4 +1,4 @@
-# openapi
+# Rumbo Weather
 \"Internal API endpoint for Rumbo to get weather info.\"
 
 
