@@ -20,7 +20,6 @@ class Day {
     this.chanceOfRain,
     this.humidity,
     this.uv,
-    this.airQuality,
   });
 
   /// The date for which the daily values are given
@@ -93,17 +92,6 @@ class Day {
   ///
   num? uv;
 
-  /// The PM2.5 value for the day that the API request was made
-  ///
-  /// Minimum value: 0
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  num? airQuality;
-
   @override
   bool operator ==(Object other) => identical(this, other) || other is Day &&
      other.date == date &&
@@ -112,8 +100,7 @@ class Day {
      other.temperature == temperature &&
      other.chanceOfRain == chanceOfRain &&
      other.humidity == humidity &&
-     other.uv == uv &&
-     other.airQuality == airQuality;
+     other.uv == uv;
 
   @override
   int get hashCode =>
@@ -124,11 +111,10 @@ class Day {
     (temperature == null ? 0 : temperature!.hashCode) +
     (chanceOfRain == null ? 0 : chanceOfRain!.hashCode) +
     (humidity == null ? 0 : humidity!.hashCode) +
-    (uv == null ? 0 : uv!.hashCode) +
-    (airQuality == null ? 0 : airQuality!.hashCode);
+    (uv == null ? 0 : uv!.hashCode);
 
   @override
-  String toString() => 'Day[date=$date, iconUrl=$iconUrl, gradientColor=$gradientColor, temperature=$temperature, chanceOfRain=$chanceOfRain, humidity=$humidity, uv=$uv, airQuality=$airQuality]';
+  String toString() => 'Day[date=$date, iconUrl=$iconUrl, gradientColor=$gradientColor, temperature=$temperature, chanceOfRain=$chanceOfRain, humidity=$humidity, uv=$uv]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -167,11 +153,6 @@ class Day {
     } else {
       json[r'uv'] = null;
     }
-    if (this.airQuality != null) {
-      json[r'airQuality'] = this.airQuality;
-    } else {
-      json[r'airQuality'] = null;
-    }
     return json;
   }
 
@@ -207,9 +188,6 @@ class Day {
         uv: json[r'uv'] == null
             ? null
             : num.parse(json[r'uv'].toString()),
-        airQuality: json[r'airQuality'] == null
-            ? null
-            : num.parse(json[r'airQuality'].toString()),
       );
     }
     return null;

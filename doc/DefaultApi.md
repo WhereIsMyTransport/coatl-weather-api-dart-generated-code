@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **getWeatherByH3Index**
-> TwoDayForecast getWeatherByH3Index(h3Index)
+> WeatherForecast getWeatherByH3Index(h3Index)
 
 
 
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TwoDayForecast**](TwoDayForecast.md)
+[**WeatherForecast**](WeatherForecast.md)
 
 ### Authorization
 

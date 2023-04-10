@@ -10,7 +10,7 @@ doc/Hourly.md
 doc/Now.md
 doc/ServerErrorResponse.md
 doc/Temperature.md
-doc/TwoDayForecast.md
+doc/WeatherForecast.md
 git_push.sh
 lib/api.dart
 lib/api/default_api.dart
@@ -29,6 +29,6 @@ lib/model/hourly.dart
 lib/model/now.dart
 lib/model/server_error_response.dart
 lib/model/temperature.dart
-lib/model/two_day_forecast.dart
+lib/model/weather_forecast.dart
 pubspec.yaml
-test/two_day_forecast_test.dart
+test/weather_forecast_test.dart

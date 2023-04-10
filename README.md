@@ -1,4 +1,4 @@
-# Rumbo Weather
+# openapi
 \"Internal API endpoint for Rumbo to get weather info.\"
 
 
@@ -73,7 +73,7 @@ Class | Method | HTTP request | Description
  - [Now](doc\/Now.md)
  - [ServerErrorResponse](doc\/ServerErrorResponse.md)
  - [Temperature](doc\/Temperature.md)
- - [TwoDayForecast](doc\/TwoDayForecast.md)
+ - [WeatherForecast](doc\/WeatherForecast.md)
 
 
 ## Documentation For Authorization

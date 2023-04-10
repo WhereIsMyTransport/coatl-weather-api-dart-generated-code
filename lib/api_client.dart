@@ -195,8 +195,8 @@ class ApiClient {
           return ServerErrorResponse.fromJson(value);
         case 'Temperature':
           return Temperature.fromJson(value);
-        case 'TwoDayForecast':
-          return TwoDayForecast.fromJson(value);
+        case 'WeatherForecast':
+          return WeatherForecast.fromJson(value);
         default:
           dynamic match;
           if (value is List && (match = _regList.firstMatch(targetType)?.group(1)) != null) {
