@@ -36,7 +36,7 @@ part 'model/hourly.dart';
 part 'model/now.dart';
 part 'model/server_error_response.dart';
 part 'model/temperature.dart';
-part 'model/two_day_forecast.dart';
+part 'model/weather_forecast.dart';
 
 
 const _delimiters = {'csv': ',', 'ssv': ' ', 'tsv': '\t', 'pipes': '|'};

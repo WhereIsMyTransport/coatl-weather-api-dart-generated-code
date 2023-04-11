@@ -56,7 +56,7 @@ class DefaultApi {
   ///
   /// * [String] h3Index (required):
   ///   \"The h3 index for which weather is requested. The responsibility falls on the client side to come up with  'good' h3 indeces to make caching work and also know when to update the weather widget should the device's  location change enough.\" 
-  Future<TwoDayForecast?> getWeatherByH3Index(String h3Index,) async {
+  Future<WeatherForecast?> getWeatherByH3Index(String h3Index,) async {
     final response = await getWeatherByH3IndexWithHttpInfo(h3Index,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -65,7 +65,7 @@ class DefaultApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'TwoDayForecast',) as TwoDayForecast;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'WeatherForecast',) as WeatherForecast;
     
     }
     return null;

@@ -15,7 +15,6 @@ Name | Type | Description | Notes
 **chanceOfRain** | **num** | The percentage chance that it will rain that day | [optional] 
 **humidity** | **num** | The humidity in the air expressed as a percentage, for the day. | [optional] 
 **uv** | **num** | The uv factor for the day | [optional] 
-**airQuality** | **num** | The PM2.5 value for the day that the API request was made | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
