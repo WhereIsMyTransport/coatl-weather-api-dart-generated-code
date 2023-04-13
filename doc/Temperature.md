@@ -1,8 +1,8 @@
-# openapi.model.Temperature
+# rumbo_weather.model.Temperature
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:rumbo_weather/api.dart';
 ```
 
 ## Properties

@@ -1,4 +1,4 @@
-# openapi
+# rumbo_weather
 \"Internal API endpoint for Rumbo to get weather info.\"
 
 
@@ -17,7 +17,7 @@ Dart 2.12 or later
 If this Dart package is published to Github, add the following dependency to your pubspec.yaml
 ```
 dependencies:
-  openapi:
+  rumbo_weather:
     git: https://github.com/GIT_USER_ID/GIT_REPO_ID.git
 ```
 
@@ -25,8 +25,8 @@ dependencies:
 To use the package in your local drive, add the following dependency to your pubspec.yaml
 ```
 dependencies:
-  openapi:
-    path: /path/to/openapi
+  rumbo_weather:
+    path: /path/to/rumbo_weather
 ```
 
 ## Tests
@@ -38,7 +38,7 @@ TODO
 Please follow the [installation procedure](#installation--usage) and then run the following:
 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:rumbo_weather/api.dart';
 
 // TODO Configure OAuth2 access token for authorization: firebase
 //defaultApiClient.getAuthentication<OAuth>('firebase').accessToken = 'YOUR_ACCESS_TOKEN';
@@ -61,19 +61,19 @@ All URIs are relative to *https://api-prod-mex.web.app*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DefaultApi* | [**getWeatherByH3Index**](doc\/DefaultApi.md#getweatherbyh3index) | **GET** /weather/v1/forecast/{h3Index} | 
+*DefaultApi* | [**getWeatherByH3Index**](doc//DefaultApi.md#getweatherbyh3index) | **GET** /weather/v1/forecast | 
 
 
 ## Documentation For Models
 
- - [ClientErrorResponse](doc\/ClientErrorResponse.md)
- - [Day](doc\/Day.md)
- - [DayTemperature](doc\/DayTemperature.md)
- - [Hourly](doc\/Hourly.md)
- - [Now](doc\/Now.md)
- - [ServerErrorResponse](doc\/ServerErrorResponse.md)
- - [Temperature](doc\/Temperature.md)
- - [WeatherForecast](doc\/WeatherForecast.md)
+ - [ClientErrorResponse](doc//ClientErrorResponse.md)
+ - [Day](doc//Day.md)
+ - [DayTemperature](doc//DayTemperature.md)
+ - [Hourly](doc//Hourly.md)
+ - [Now](doc//Now.md)
+ - [ServerErrorResponse](doc//ServerErrorResponse.md)
+ - [Temperature](doc//Temperature.md)
+ - [WeatherForecast](doc//WeatherForecast.md)
 
 
 ## Documentation For Authorization

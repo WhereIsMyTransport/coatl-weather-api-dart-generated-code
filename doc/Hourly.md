@@ -1,8 +1,8 @@
-# openapi.model.Hourly
+# rumbo_weather.model.Hourly
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:rumbo_weather/api.dart';
 ```
 
 ## Properties

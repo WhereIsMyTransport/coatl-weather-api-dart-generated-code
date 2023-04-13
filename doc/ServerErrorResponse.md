@@ -1,8 +1,8 @@
-# openapi.model.ServerErrorResponse
+# rumbo_weather.model.ServerErrorResponse
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:rumbo_weather/api.dart';
 ```
 
 ## Properties
