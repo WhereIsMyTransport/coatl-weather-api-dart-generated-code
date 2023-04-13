@@ -8,7 +8,7 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of openapi.api;
+part of rumbo_weather;
 
 class ServerErrorResponse {
   /// Returns a new [ServerErrorResponse] instance.
@@ -17,12 +17,6 @@ class ServerErrorResponse {
   });
 
   /// Message describing the reason(s) the service can't complete the request. Includes the status code from the downstream API as well as their status message.
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
   String? message;
 
   @override

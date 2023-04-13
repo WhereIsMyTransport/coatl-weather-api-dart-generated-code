@@ -1,14 +1,14 @@
-# openapi.model.WeatherForecast
+# rumbo_weather.model.WeatherForecast
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:rumbo_weather/api.dart';
 ```
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**now** | [**Now**](Now.md) |  | [optional] 
+**now** | [**Now**](Now.md) |  | 
 **day** | [**List<Day>**](Day.md) | A list of days with daily weather values for each. | [optional] [default to const []]
 **hourly** | [**List<Hourly>**](Hourly.md) | A list of forecast for each hour of the day that the API request was made and the next day | [optional] [default to const []]
 **airQuality** | **num** | The PM2.5 value for the day that the API request was made | [optional] 

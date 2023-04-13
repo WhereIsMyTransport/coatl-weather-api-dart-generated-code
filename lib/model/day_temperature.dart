@@ -8,21 +8,15 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of openapi.api;
+part of rumbo_weather;
 
 class DayTemperature {
   /// Returns a new [DayTemperature] instance.
   DayTemperature({
-    this.minimum,
+    required this.minimum,
   });
 
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  Temperature? minimum;
+  Temperature minimum;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is DayTemperature &&
@@ -31,18 +25,14 @@ class DayTemperature {
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (minimum == null ? 0 : minimum!.hashCode);
+    (minimum.hashCode);
 
   @override
   String toString() => 'DayTemperature[minimum=$minimum]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.minimum != null) {
       json[r'minimum'] = this.minimum;
-    } else {
-      json[r'minimum'] = null;
-    }
     return json;
   }
 
@@ -65,7 +55,7 @@ class DayTemperature {
       }());
 
       return DayTemperature(
-        minimum: Temperature.fromJson(json[r'minimum']),
+        minimum: Temperature.fromJson(json[r'minimum'])!,
       );
     }
     return null;
@@ -115,6 +105,7 @@ class DayTemperature {
 
   /// The list of required keys that must be present in a JSON.
   static const requiredKeys = <String>{
+    'minimum',
   };
 }
 

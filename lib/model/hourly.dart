@@ -8,42 +8,28 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of openapi.api;
+part of rumbo_weather;
 
 class Hourly {
   /// Returns a new [Hourly] instance.
   Hourly({
-    this.datetime,
-    this.temperature,
-    this.iconUrl,
+    required this.datetime,
+    required this.temperature,
+    required this.conditionCode,
+    required this.iconUrl,
     this.chanceOfRain,
   });
 
   /// The date and hour for which the forecast data is given. This is given in UTC.
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  String? datetime;
+  String datetime;
 
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  Temperature? temperature;
+  Temperature temperature;
+
+  /// A short code which describe the weather condition.
+  String conditionCode;
 
   /// The URL for the weather icon to display.
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  String? iconUrl;
+  String iconUrl;
 
   /// The percentage chance that it will rain that day
   ///
@@ -61,37 +47,28 @@ class Hourly {
   bool operator ==(Object other) => identical(this, other) || other is Hourly &&
      other.datetime == datetime &&
      other.temperature == temperature &&
+     other.conditionCode == conditionCode &&
      other.iconUrl == iconUrl &&
      other.chanceOfRain == chanceOfRain;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (datetime == null ? 0 : datetime!.hashCode) +
-    (temperature == null ? 0 : temperature!.hashCode) +
-    (iconUrl == null ? 0 : iconUrl!.hashCode) +
+    (datetime.hashCode) +
+    (temperature.hashCode) +
+    (conditionCode.hashCode) +
+    (iconUrl.hashCode) +
     (chanceOfRain == null ? 0 : chanceOfRain!.hashCode);
 
   @override
-  String toString() => 'Hourly[datetime=$datetime, temperature=$temperature, iconUrl=$iconUrl, chanceOfRain=$chanceOfRain]';
+  String toString() => 'Hourly[datetime=$datetime, temperature=$temperature, conditionCode=$conditionCode, iconUrl=$iconUrl, chanceOfRain=$chanceOfRain]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.datetime != null) {
       json[r'datetime'] = this.datetime;
-    } else {
-      json[r'datetime'] = null;
-    }
-    if (this.temperature != null) {
       json[r'temperature'] = this.temperature;
-    } else {
-      json[r'temperature'] = null;
-    }
-    if (this.iconUrl != null) {
+      json[r'conditionCode'] = this.conditionCode;
       json[r'iconUrl'] = this.iconUrl;
-    } else {
-      json[r'iconUrl'] = null;
-    }
     if (this.chanceOfRain != null) {
       json[r'chanceOfRain'] = this.chanceOfRain;
     } else {
@@ -119,9 +96,10 @@ class Hourly {
       }());
 
       return Hourly(
-        datetime: mapValueOfType<String>(json, r'datetime'),
-        temperature: Temperature.fromJson(json[r'temperature']),
-        iconUrl: mapValueOfType<String>(json, r'iconUrl'),
+        datetime: mapValueOfType<String>(json, r'datetime')!,
+        temperature: Temperature.fromJson(json[r'temperature'])!,
+        conditionCode: mapValueOfType<String>(json, r'conditionCode')!,
+        iconUrl: mapValueOfType<String>(json, r'iconUrl')!,
         chanceOfRain: json[r'chanceOfRain'] == null
             ? null
             : num.parse(json[r'chanceOfRain'].toString()),
@@ -174,6 +152,10 @@ class Hourly {
 
   /// The list of required keys that must be present in a JSON.
   static const requiredKeys = <String>{
+    'datetime',
+    'temperature',
+    'conditionCode',
+    'iconUrl',
   };
 }
 

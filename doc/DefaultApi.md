@@ -1,15 +1,15 @@
-# openapi.api.DefaultApi
+# rumbo_weather.api.DefaultApi
 
 ## Load the API package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:rumbo_weather/api.dart';
 ```
 
 All URIs are relative to *https://api-prod-mex.web.app*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getWeatherByH3Index**](DefaultApi.md#getweatherbyh3index) | **GET** /weather/v1/forecast/{h3Index} | 
+[**getWeatherByH3Index**](DefaultApi.md#getweatherbyh3index) | **GET** /weather/v1/forecast | 
 
 
 # **getWeatherByH3Index**
@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:rumbo_weather/api.dart';
 // TODO Configure OAuth2 access token for authorization: firebase
 //defaultApiClient.getAuthentication<OAuth>('firebase').accessToken = 'YOUR_ACCESS_TOKEN';
 

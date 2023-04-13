@@ -8,10 +8,14 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of rumbo_weather;
+import 'package:rumbo_weather/api.dart';
+import 'package:test/test.dart';
 
-// ignore: one_member_abstracts
-abstract class Authentication {
-  /// Apply authentication settings to header and query params.
-  Future<void> applyToParams(List<QueryParam> queryParams, Map<String, String> headerParams);
+// tests for ConditionCode
+void main() {
+
+  group('test ConditionCode', () {
+
+  });
+
 }
