@@ -8,13 +8,13 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of openapi.api;
+part of rumbo_weather;
 
 class Temperature {
   /// Returns a new [Temperature] instance.
   Temperature({
     this.degrees,
-    this.unit,
+    required this.unit,
   });
 
   /// The value of the temperature
@@ -27,13 +27,7 @@ class Temperature {
   num? degrees;
 
   /// The unit in which the temperature was reported. Celsius or Fahrenheit.
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  String? unit;
+  String unit;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is Temperature &&
@@ -44,7 +38,7 @@ class Temperature {
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (degrees == null ? 0 : degrees!.hashCode) +
-    (unit == null ? 0 : unit!.hashCode);
+    (unit.hashCode);
 
   @override
   String toString() => 'Temperature[degrees=$degrees, unit=$unit]';
@@ -56,11 +50,7 @@ class Temperature {
     } else {
       json[r'degrees'] = null;
     }
-    if (this.unit != null) {
       json[r'unit'] = this.unit;
-    } else {
-      json[r'unit'] = null;
-    }
     return json;
   }
 
@@ -86,7 +76,7 @@ class Temperature {
         degrees: json[r'degrees'] == null
             ? null
             : num.parse(json[r'degrees'].toString()),
-        unit: mapValueOfType<String>(json, r'unit'),
+        unit: mapValueOfType<String>(json, r'unit')!,
       );
     }
     return null;
@@ -136,6 +126,7 @@ class Temperature {
 
   /// The list of required keys that must be present in a JSON.
   static const requiredKeys = <String>{
+    'unit',
   };
 }
 

@@ -8,18 +8,18 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of openapi.api;
+part of rumbo_weather;
 
 class WeatherForecast {
   /// Returns a new [WeatherForecast] instance.
   WeatherForecast({
-    this.now,
+    required this.now,
     this.day = const [],
     this.hourly = const [],
     this.airQuality,
   });
 
-  Now? now;
+  Now now;
 
   /// A list of days with daily weather values for each.
   List<Day>? day;
@@ -42,7 +42,7 @@ class WeatherForecast {
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (now == null ? 0 : now!.hashCode) +
+    (now.hashCode) +
     (day == null ? 0 : day!.hashCode) +
     (hourly == null ? 0 : hourly!.hashCode) +
     (airQuality == null ? 0 : airQuality!.hashCode);
@@ -52,11 +52,7 @@ class WeatherForecast {
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.now != null) {
       json[r'now'] = this.now;
-    } else {
-      json[r'now'] = null;
-    }
     if (this.day != null) {
       json[r'day'] = this.day;
     } else {
@@ -94,7 +90,7 @@ class WeatherForecast {
       }());
 
       return WeatherForecast(
-        now: Now.fromJson(json[r'now']),
+        now: Now.fromJson(json[r'now'])!,
         day: Day.listFromJson(json[r'day']) ?? const [],
         hourly: Hourly.listFromJson(json[r'hourly']) ?? const [],
         airQuality: json[r'airQuality'] == null
@@ -149,6 +145,7 @@ class WeatherForecast {
 
   /// The list of required keys that must be present in a JSON.
   static const requiredKeys = <String>{
+    'now',
   };
 }
 

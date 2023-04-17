@@ -8,44 +8,31 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of openapi.api;
+part of rumbo_weather;
 
 class Now {
   /// Returns a new [Now] instance.
   Now({
-    this.iconUrl,
-    this.gradientColor,
-    this.temperature,
+    required this.conditionCode,
+    required this.iconUrl,
+    required this.gradientColor,
+    required this.temperature,
   });
 
+  /// A short code which describe the weather condition.
+  String conditionCode;
+
   /// The URL for the weather icon to display.
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  String? iconUrl;
+  String iconUrl;
 
   /// The Hex code for the weather background colour gradient to display.
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  String? gradientColor;
+  String gradientColor;
 
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  Temperature? temperature;
+  Temperature temperature;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is Now &&
+     other.conditionCode == conditionCode &&
      other.iconUrl == iconUrl &&
      other.gradientColor == gradientColor &&
      other.temperature == temperature;
@@ -53,30 +40,20 @@ class Now {
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (iconUrl == null ? 0 : iconUrl!.hashCode) +
-    (gradientColor == null ? 0 : gradientColor!.hashCode) +
-    (temperature == null ? 0 : temperature!.hashCode);
+    (conditionCode.hashCode) +
+    (iconUrl.hashCode) +
+    (gradientColor.hashCode) +
+    (temperature.hashCode);
 
   @override
-  String toString() => 'Now[iconUrl=$iconUrl, gradientColor=$gradientColor, temperature=$temperature]';
+  String toString() => 'Now[conditionCode=$conditionCode, iconUrl=$iconUrl, gradientColor=$gradientColor, temperature=$temperature]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.iconUrl != null) {
+      json[r'conditionCode'] = this.conditionCode;
       json[r'iconUrl'] = this.iconUrl;
-    } else {
-      json[r'iconUrl'] = null;
-    }
-    if (this.gradientColor != null) {
       json[r'gradientColor'] = this.gradientColor;
-    } else {
-      json[r'gradientColor'] = null;
-    }
-    if (this.temperature != null) {
       json[r'temperature'] = this.temperature;
-    } else {
-      json[r'temperature'] = null;
-    }
     return json;
   }
 
@@ -99,9 +76,10 @@ class Now {
       }());
 
       return Now(
-        iconUrl: mapValueOfType<String>(json, r'iconUrl'),
-        gradientColor: mapValueOfType<String>(json, r'gradientColor'),
-        temperature: Temperature.fromJson(json[r'temperature']),
+        conditionCode: mapValueOfType<String>(json, r'conditionCode')!,
+        iconUrl: mapValueOfType<String>(json, r'iconUrl')!,
+        gradientColor: mapValueOfType<String>(json, r'gradientColor')!,
+        temperature: Temperature.fromJson(json[r'temperature'])!,
       );
     }
     return null;
@@ -151,6 +129,10 @@ class Now {
 
   /// The list of required keys that must be present in a JSON.
   static const requiredKeys = <String>{
+    'conditionCode',
+    'iconUrl',
+    'gradientColor',
+    'temperature',
   };
 }
 

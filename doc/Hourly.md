@@ -1,16 +1,17 @@
-# openapi.model.Hourly
+# rumbo_weather.model.Hourly
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:rumbo_weather/api.dart';
 ```
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**datetime** | **String** | The date and hour for which the forecast data is given. This is given in UTC. | [optional] 
-**temperature** | [**Temperature**](Temperature.md) |  | [optional] 
-**iconUrl** | **String** | The URL for the weather icon to display. | [optional] 
+**datetime** | **String** | The date and hour for which the forecast data is given. This is given in UTC. | 
+**temperature** | [**Temperature**](Temperature.md) |  | 
+**conditionCode** | **String** | A short code which describe the weather condition. | 
+**iconUrl** | **String** | The URL for the weather icon to display. | 
 **chanceOfRain** | **num** | The percentage chance that it will rain that day | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
