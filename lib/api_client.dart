@@ -8,7 +8,7 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of openapi.api;
+part of rumbo_weather;
 
 class ApiClient {
   ApiClient({this.basePath = 'https://api-prod-mex.web.app', this.authentication,});

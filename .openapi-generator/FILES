@@ -31,4 +31,3 @@ lib/model/server_error_response.dart
 lib/model/temperature.dart
 lib/model/weather_forecast.dart
 pubspec.yaml
-test/weather_forecast_test.dart

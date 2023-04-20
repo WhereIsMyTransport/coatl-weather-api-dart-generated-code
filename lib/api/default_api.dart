@@ -8,7 +8,7 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of openapi.api;
+part of rumbo_weather;
 
 
 class DefaultApi {
@@ -26,8 +26,7 @@ class DefaultApi {
   ///   \"The h3 index for which weather is requested. The responsibility falls on the client side to come up with  'good' h3 indeces to make caching work and also know when to update the weather widget should the device's  location change enough.\" 
   Future<Response> getWeatherByH3IndexWithHttpInfo(String h3Index,) async {
     // ignore: prefer_const_declarations
-    final path = r'/weather/v1/forecast/{h3Index}'
-      .replaceAll('{h3Index}', h3Index);
+    final path = r'/weather/v1/forecast';
 
     // ignore: prefer_final_locals
     Object? postBody;
@@ -35,6 +34,8 @@ class DefaultApi {
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
+
+      queryParams.addAll(_queryParams('', 'h3Index', h3Index));
 
     const contentTypes = <String>[];
 

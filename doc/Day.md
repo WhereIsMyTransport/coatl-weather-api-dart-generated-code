@@ -1,8 +1,8 @@
-# openapi.model.Day
+# rumbo_weather.model.Day
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:rumbo_weather/api.dart';
 ```
 
 ## Properties
